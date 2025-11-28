@@ -1,0 +1,99 @@
+body {
+    font-family: "Poppins", sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.informacoes {
+    display: none;
+}
+
+.informacoes.ativa {
+    display: block;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+.informacoes h1 {
+    font-size: 45px;
+    color: white;
+    margin-bottom: 30px;
+
+}
+
+.informacoes .descricao {
+    width: 52%;
+    font-size: 20px;
+    color: white;
+    line-height: 22px;
+    height: 300px;
+    overflow: auto;
+    padding-right: 15px;
+
+}
+
+.botoes-carro {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botoes-carro .botao {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-color: white;
+}
+
+.botoes-carro .botao.selecionado {
+    background-color: hotpink;
+}
+
+.imagem {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+}
+
+.imagem.ativa {
+    display: block;
+    animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main::after {
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 102%);
+    z-index: -1;
+}
